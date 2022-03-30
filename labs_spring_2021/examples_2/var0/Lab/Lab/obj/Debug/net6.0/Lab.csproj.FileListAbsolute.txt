@@ -1,0 +1,15 @@
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/bin/Debug/net6.0/Lab
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/bin/Debug/net6.0/Lab.deps.json
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/bin/Debug/net6.0/Lab.runtimeconfig.json
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/bin/Debug/net6.0/Lab.dll
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/bin/Debug/net6.0/Lab.pdb
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.csproj.AssemblyReference.cache
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.GeneratedMSBuildEditorConfig.editorconfig
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.AssemblyInfoInputs.cache
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.AssemblyInfo.cs
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.csproj.CoreCompileInputs.cache
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.dll
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/refint/Lab.dll
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.pdb
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/Lab.genruntimeconfig.cache
+/home/serhiy/Studying/Prog/Projects/Labki s ineta/Introduction-To-Programming/labs_spring_2021/examples_2/var0/Varrrrr 0 linux/Lab/Lab/obj/Debug/net6.0/ref/Lab.dll
