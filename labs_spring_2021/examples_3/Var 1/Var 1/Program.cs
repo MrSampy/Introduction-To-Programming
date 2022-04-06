@@ -2,47 +2,21 @@
 using System.IO;
 using System.Linq;
 using System.Numerics;
-
-void print_matrix(char [,] m) 
-{ 
-   for (int i = 0; i < m.GetUpperBound(0)+1; ++i)
-   {
-      for (int j = 0; j < m.GetUpperBound(1) + 1; ++j)
-      {
-         Console.Write(m[i,j]);
-      }
-      Console.WriteLine();
-   }
-}
-
-void print_coord_List(List<int[]> coord)
-{
-   for (int i = 0; i < coord.Count; i++)
-   {  Console.Write($"{i+1})Coordinate: ( ");
-      for (int j = 0; j < coord[i].Length; j++)
-      {
-         Console.Write($"{coord[i][j]} ");
-      }
-      Console.WriteLine(")");
-   }
-}
-
 bool isContains(List<int[]> coord, int[] temparr)
 {
-   for (int i = 0; i < coord.Count; i++)
+   for (var i = 0; i < coord.Count; i++)
       if (coord[i][0] == temparr[0] && coord[i][1] == temparr[1])
          return true;
    return false;
 }
-
 char[,] matrix;
 List<int[]> all_coordinates = new List<int[]>(), final_coordinates = new List<int[]>();
 var path="/home/serhiy/Документы/GitHub/Introduction-To-Programming/labs_spring_2021/examples_3/Labirint.csv";
 int rows = File.ReadAllLines(path).Length, columns = 0;
-int[] end_coord=new int[2];
-using (StreamReader reader = new StreamReader(path))
+var end_coord=new int[2];
+using (var reader = new StreamReader(path))
 {
-   string a = reader.ReadLine();
+   var a = reader.ReadLine();
    reader.BaseStream.Position = 0;
    for (int i = 0; i < a.Length; i++)
    { 
@@ -70,11 +44,6 @@ for (int i = 0; i < 2; i++)
       else
           Console.Write("Enter coordinates of start point: ");
       var input = Console.ReadLine().Split(' ');
-      if (input[0] == null || input[1] == null)
-      {
-         Console.WriteLine("Try again!(Null numbers)");
-         continue;
-      }
       int row_cor = Convert.ToInt32(input[0]), colm_cor = Convert.ToInt32(input[1]);
       if (row_cor >= rows-1 || colm_cor >= columns-1 || colm_cor%2==1 || colm_cor<=0 || row_cor<=0 || matrix[row_cor, colm_cor] == 'X')
       {
@@ -97,14 +66,14 @@ for (int i = 0; i < 2; i++)
    }
    Console.WriteLine();
 }
-int tempint=0,counter=1,lenbgth_of_arr = all_coordinates.Count;
-bool tempbool = false, isskip=false;
-for (int i = 0; i < all_coordinates.Count; i++)
+int tempint=0,counter=1,length_of_arr = all_coordinates.Count;
+var tempbool = false;
+for (var i = 0; i < all_coordinates.Count; i++)
 {
-   for (int j = 0; j < 4; j++)
+   for (var j = 0; j < 4; j++)
    {
       int[] temparr = new int[3];
-      for (int k = 0; k < temparr.Length; k++)
+      for (var k = 0; k < temparr.Length; k++)
       {
          temparr[k] = all_coordinates[i][k];
       }
@@ -123,11 +92,13 @@ for (int i = 0; i < all_coordinates.Count; i++)
              temparr[1]-=2;
             break;
        }
-      if (temparr[0] < 0 || temparr[0] >= rows || temparr[1] < 0 || temparr[1] >= columns || isContains(all_coordinates, temparr) || matrix[temparr[0], temparr[1]] == 'X')
+      if (temparr[0] < 0 || temparr[0] >= rows || temparr[1] < 0 || temparr[1] >= columns 
+          || isContains(all_coordinates, temparr) || matrix[temparr[0], temparr[1]] == 'X')
          continue;
       temparr[2] = counter;
       if (temparr[0].CompareTo(end_coord[0])==0 && temparr[1].CompareTo(end_coord[1])==0)
-      {  all_coordinates.Add(temparr);
+      {  
+         all_coordinates.Add(temparr);
          tempbool = true;
          break;
       }
@@ -136,20 +107,18 @@ for (int i = 0; i < all_coordinates.Count; i++)
          all_coordinates.Add(temparr);
       }
    }
-
    if (!Convert.ToBoolean(tempint))
    {
-      tempint = all_coordinates.Count - lenbgth_of_arr;
-      lenbgth_of_arr = all_coordinates.Count;
+      tempint = all_coordinates.Count - length_of_arr;
+      length_of_arr = all_coordinates.Count;
       ++counter;
-
    }
    --tempint;
    if (tempbool)
        break;
 }
-int[] temparray = all_coordinates[all_coordinates.Count - 1];
-for (int i = all_coordinates.Count - 2; i > 0; --i)
+var temparray = all_coordinates[all_coordinates.Count - 1];
+for (var i = all_coordinates.Count - 2; i > 0; --i)
 {
    if (all_coordinates[i][2] < temparray[2] && (Math.Abs(temparray[0] - all_coordinates[i][0]) == 1 ||
                                                 Math.Abs(temparray[1] - all_coordinates[i][1]) == 2))
@@ -158,6 +127,26 @@ for (int i = all_coordinates.Count - 2; i > 0; --i)
       final_coordinates.Insert(0,temparray);
    }
 }
-for(int i=0;i<final_coordinates.Count;++i)
-   matrix[final_coordinates[i][0],final_coordinates[i][1]]=Convert.ToChar(i+97); 
-print_matrix(matrix);
+for(var i=0;i<final_coordinates.Count;++i)
+   matrix[final_coordinates[i][0],final_coordinates[i][1]]=Convert.ToChar(i+97);
+for (var i = path.Length - 1; i >= 0; --i)
+{
+   if (path[i] == '/')
+   {  
+      path+="Result.csv";
+      break;
+   }
+   path=path.Remove(i);
+}
+
+using (StreamWriter writer = new StreamWriter(path,false))
+{
+   for (var i = 0; i < rows; i++)
+   {
+      for (var j = 0; j < columns; j++)
+      {
+         writer.Write(matrix[i,j]);
+      }
+      writer.WriteLine();
+   }
+}
